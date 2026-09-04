@@ -1,41 +1,47 @@
 # Bliss Flower Boutique – Database System
+## IS221: Database Systems — Oracle SQL
 
-A relational database system built in Oracle SQL for managing a flower shop's staff, customers, orders, products, and billing — with role-based access control for different staff levels.
+**Overview:**
+This project was completed as part of a Database Systems course. It is a relational database system built in Oracle SQL for managing a flower boutique's staff, customers, orders, products, and billing, with role-based access control for different staff levels.
 
-## Overview
+**Objectives:**
+- Design a relational database schema for a real-world business.
+- Implement role-based access control for different staff levels.
+- Apply stored procedures, functions, and triggers to automate business logic.
+- Apply query optimization techniques to improve database performance.
 
-This project models the core operations of a flower boutique: staff management, customer records, order processing, product catalog, and billing. It demonstrates database design, role-based security, stored procedures, functions, triggers, and query optimization in Oracle SQL.
+**System Features:**
+- Staff, customer, order, product, and billing management
+- Role-based access control (Admin, Manager, Cashier)
+- Automated stock updates via stored procedure
+- Salary lookup via function
+- Automatic order status assignment via trigger
+- Indexed customer lookup
+- Optimized join queries
 
-## Database Schema
+**Concepts & Tools:**
+- Oracle SQL & PL/SQL
+- Relational Database Design
+- Role-Based Access Control
+- Stored Procedures, Functions, Triggers
+- Indexing & Query Optimization
 
-- **Staff** — employee records (ID, phone, salary, email)
-- **Customer** — customer records, linked to the staff member who registered them
-- **Order_** — customer orders with status and total price
-- **Product** — product catalog (type, price)
-- **Order_Product** — join table linking orders to products with quantities
-- **Bill** — billing/receipt records linked to orders and staff
+**My Contribution:**
+Implemented the database schema and its core logic, including:
+- User roles and permissions for Admin, Manager, and Cashier levels.
+- A stored procedure to update product stock.
+- A function to retrieve staff salary by ID.
+- A trigger to automatically set new orders to "Pending" status.
+- An index on customer phone number to speed up lookups.
+- A join query to retrieve customers with completed orders.
 
-## Role-Based Access Control
+**Skills Demonstrated:**
+- Database Design
+- SQL & PL/SQL Programming
+- Role-Based Access Control
+- Query Optimization
+- Technical Documentation
 
-Three roles with different privilege levels:
-
-| Role | Access |
-|---|---|
-| **Admin** | Full privileges on all tables |
-| **Manager** | Select/Insert/Update on Staff, Orders, Products |
-| **Cashier** | Select/Insert on Orders, Select on Customers |
-
-## Key Features
-
-- **Stored Procedure** — `UpdateProductStock`: updates product quantity after new stock arrives
-- **Function** — `GetStaffSalaryByID_`: returns a staff member's salary by ID
-- **Trigger** — `SetDefaultOrderStatus`: automatically sets a new order's status to "Pending" if not provided
-- **Indexing** — index on `Customer(Phone_Num)` to speed up phone-based lookups
-- **Join Query** — retrieves all customers with completed orders via a join between Customer and Order_
-
-## How to Run
-
-1. Run the script in Oracle SQL Developer (or any Oracle-compatible client).
-2. Tables are created and populated with sample data automatically.
-3. Roles and users (`admin_user`, `manager_user`, `cashier_user`) are created with their respective privileges.
-4. Run the sample `SELECT` statements at the bottom of the script to test procedures, functions, and triggers.
+**Repository Contents:**
+- Complete SQL script (schema, roles, procedures, functions, triggers)
+- README with schema and feature documentation
